@@ -12,7 +12,7 @@ index 75d10e3..308a0b2 100644
  activity_version = 4
 -license = MIT License
 +release_date = 2024-07-21
-+license = GPLv3+
++license = MIT
 +metadata_license = CC0-1.0
 +summary = Math game for fourth grade children
 +description = A game designed to help teach children math in accordance with the Common Core standard for fourth grade students.

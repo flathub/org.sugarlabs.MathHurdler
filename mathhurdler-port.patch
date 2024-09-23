@@ -1,5 +1,5 @@
 diff --git a/math_hurdlerActivity.py b/math_hurdlerActivity.py
-index dcf6000..9719d6c 100644
+index dcf6000..0f0b90a 100644
 --- a/math_hurdlerActivity.py
 +++ b/math_hurdlerActivity.py
 @@ -2,9 +2,7 @@ import math_hurdler
@@ -12,7 +12,7 @@ index dcf6000..9719d6c 100644
  import pygame
  
  from gettext import gettext as _
-@@ -14,10 +12,15 @@ import gi
+@@ -14,10 +12,12 @@ import gi
  gi.require_version('Gtk', '3.0')
  from gi.repository import Gtk
  
@@ -20,9 +20,6 @@ index dcf6000..9719d6c 100644
 +from sugarapp.widgets import ExtendedActivityToolbarButton
  
 -class MathHurdlerActivity(sugar3.activity.activity.Activity):
-+from sugar3.graphics.style import GRID_CELL_SIZE
-+from sugarapp.helpers import PrimaryMonitor
-+
 +class MathHurdlerActivity(SugarCompatibleActivity):
      def __init__(self, handle):
 -        super(MathHurdlerActivity, self).__init__(handle)
@@ -30,7 +27,7 @@ index dcf6000..9719d6c 100644
  
          self.paused = False
          self.muted = False
-@@ -28,24 +31,29 @@ class MathHurdlerActivity(sugar3.activity.activity.Activity):
+@@ -28,12 +28,13 @@ class MathHurdlerActivity(sugar3.activity.activity.Activity):
          self.build_toolbar()
  
          # Build the Pygame canvas.
@@ -46,15 +43,7 @@ index dcf6000..9719d6c 100644
  
          # Start the game running (self.game.run is called when the
          # activity constructor returns).
-         # Deprecated:Not required in sugargame v0.12
-         # self._pygamecanvas.run_pygame(self.game.run)
- 
-+        w = PrimaryMonitor.width()
-+        h = PrimaryMonitor.height()
-+        self.game.canvas.set_size_request(w, h-GRID_CELL_SIZE)
-+
-     def build_toolbar(self):
-         toolbar_box = ToolbarBox()
+@@ -45,7 +46,7 @@ class MathHurdlerActivity(sugar3.activity.activity.Activity):
          self.set_toolbar_box(toolbar_box)
          toolbar_box.show()
  

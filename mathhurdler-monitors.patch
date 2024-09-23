@@ -1,0 +1,25 @@
+diff --git a/math_hurdlerActivity.py b/math_hurdlerActivity.py
+index 0f0b90a..9719d6c 100644
+--- a/math_hurdlerActivity.py
++++ b/math_hurdlerActivity.py
+@@ -15,6 +15,9 @@ from gi.repository import Gtk
+ from sugarapp.widgets import SugarCompatibleActivity
+ from sugarapp.widgets import ExtendedActivityToolbarButton
+ 
++from sugar3.graphics.style import GRID_CELL_SIZE
++from sugarapp.helpers import PrimaryMonitor
++
+ class MathHurdlerActivity(SugarCompatibleActivity):
+     def __init__(self, handle):
+         SugarCompatibleActivity.__init__(self, handle)
+@@ -41,6 +44,10 @@ class MathHurdlerActivity(SugarCompatibleActivity):
+         # Deprecated:Not required in sugargame v0.12
+         # self._pygamecanvas.run_pygame(self.game.run)
+ 
++        w = PrimaryMonitor.width()
++        h = PrimaryMonitor.height()
++        self.game.canvas.set_size_request(w, h-GRID_CELL_SIZE)
++
+     def build_toolbar(self):
+         toolbar_box = ToolbarBox()
+         self.set_toolbar_box(toolbar_box)

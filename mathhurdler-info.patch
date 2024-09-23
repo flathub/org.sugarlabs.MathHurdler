@@ -14,7 +14,7 @@ index 75d10e3..308a0b2 100644
 +release_date = 2024-07-21
 +license = MIT
 +metadata_license = CC0-1.0
-+summary = Math game for fourth grade children
++summary = Engaging math game for children
 +description = A game designed to help teach children math in accordance with the Common Core standard for fourth grade students.
 +tags = Game
 +url = https://github.com/sugarlabs/math-hurdler
